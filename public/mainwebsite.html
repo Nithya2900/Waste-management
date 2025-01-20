@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Impact - Sustainable Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        #header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #343a40;
+        }
+
+        #header .logo h2 {
+            color: #17a2b8;
+            margin: 0;
+        }
+
+        #header nav a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease;
+        }
+
+        #header nav a:hover {
+            color: #17a2b8;
+        }
+
+        #hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: url('https://digitallearning.eletsonline.com/wp-content/uploads/2018/12/eco_parailustrar_copia.jpg') no-repeat center center / cover;
+            height: 100vh;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        #hero .btn {
+            background-color: #17a2b8;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #hero .btn:hover {
+            background-color: #138496;
+        }
+
+        section {
+            padding: 50px 15px;
+        }
+
+        #solutions {
+            background-color: #f8f9fa;
+        }
+
+        #solutions .solution-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+        }
+
+        #solutions .solution-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #17a2b8;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #138496;
+        }
+
+        @media (max-width: 767px) {
+            #hero h1 {
+                font-size: 2rem;
+            }
+
+            #hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header" class="bg-dark p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <h2>Revive</h2>
+        </div>
+        <nav>
+            <a href="#about" aria-label="About Us" class="text-white mx-2">About Us</a>
+            <a href="#solutions" aria-label="Our Solutions" class="text-white mx-2">Our Solutions</a>
+            <a href="#get-involved" aria-label="Get Involved" class="text-white mx-2">Get Involved</a>
+            <a href="#contact" aria-label="Contact Us" class="text-white mx-2">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<section id="hero">
+    <div>
+        <h1 class="display-4">Building a Sustainable Future</h1>
+        <p class="lead">Join us in the movement towards a cleaner, greener planet. Your actions can create a significant impact.</p>
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <a href="#get-involved" class="btn btn-primary btn-lg">Get Involved</a>
+            <a href="recycle.html" class="btn btn-success btn-lg">Recycle</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="https://etimg.etb2bimg.com/photo/95217315.cms" alt="About Us Image"  class="img-fluid rounded shadow" style="width: 100%; height: auto;">
+            </div>
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>
+                    At <strong>Revive</strong>, we are driven by the vision of a sustainable future where every individual and community contributes to a cleaner, greener planet. Our mission is to empower people with knowledge, tools, and solutions to minimize their environmental footprint and promote eco-friendly living.
+                </p>
+                <p>
+                    With a focus on innovation, education, and action, we provide sustainable solutions such as recycling programs, responsible waste management, and advocacy for climate-conscious lifestyles. By collaborating with individuals, businesses, and communities, we aim to create lasting change and inspire a global movement towards sustainability.
+                </p>
+                <p>
+                    Together, let's build a world where sustainability is second nature, and every action contributes to a brighter future.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="solutions" class="text-center">
+    <div class="container">
+        <h2>Our Solutions</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="solution-box">
+                    <h3>Smart Waste Classification</h3>
+                    <p> AI analyzes waste images to identify recyclable materials and optimize segregation</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="solution-box">
+                    <h3>Dynamic Process Optimization </h3>
+                    <p>Real-time environmental data drives efficient recycling patterns and execution timing.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="solution-box">
+                    <h3>Data-Driven Recycling Decisions </h3>
+                    <p>AI-powered recommendations ensure precision and sustainability in waste recycling processes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="get-involved" class="text-center">
+    <div class="container">
+        <h2>Get Involved</h2>
+        <p>Take action and be part of the change. Find ways to reduce your carbon footprint and promote sustainability.</p>
+        <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+    </div>
+</section>
+
+<footer class="text-center">
+    <p>&copy; 2025 Eco Impact. All rights reserved.</p>
+    <div>
+        <a href="#" class="mx-2">Facebook</a>
+        <a href="#" class="mx-2">Twitter</a>
+        <a href="#" class="mx-2">Instagram</a>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
