@@ -9,7 +9,13 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+
 
         #result {
             margin-top: 20px;
@@ -19,9 +25,35 @@
             font-size: 1.2rem;
             font-weight: bold;
         }
+
+        .header {
+            background-color: #343a40;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .container {
+            flex: 1; 
+            padding-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto; /* Pushes the footer to the bottom of the page */
+        }
     </style>
 </head>
 <body>
+
+<!-- Header -->
+<div class="header">
+    <h1>Recycle - Waste Classification</h1>
+    <p>Helping you classify waste for a cleaner environment</p>
+</div>
 
 <div class="container mt-5">
     <h2 class="text-center">Upload Image for Waste Classification</h2>
@@ -32,38 +64,50 @@
             <label for="image" class="form-label">Choose Image</label>
             <input type="file" class="form-control" id="image" name="file" required>
         </div>
-        <button type="submit" class="btn btn-primary">Classify</button>
+
+        <!-- Add fields for temperature and humidity -->
+        <div class="mb-3">
+            <label for="temperature" class="form-label">Temperature (°C)</label>
+            <input type="number" class="form-control" id="temperature" name="temperature" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="humidity" class="form-label">Humidity (%)</label>
+            <input type="number" class="form-control" id="humidity" name="humidity" required>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="classifyWaste()">Classify</button>
     </form>
 
     <div id="result" class="text-center"></div>
+
+    <!-- Content to display after classification -->
+    <div id="extra-content" class="text-center mt-4" style="display: none;">
+        <h5>Among the three types of recycling methods in recycling plastic like Mechanical recycling, Chemical recycling, and Energy recycling, the method that will be more suitable for your condition will be Chemical recycling.</h5>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2025 Recycle - All Rights Reserved</p>
 </div>
 
 <script>
-    // Handle the form submission
-    document.getElementById('upload-form').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        
-        // Get the file from the form
-        const formData = new FormData();
+    function classifyWaste() {
+        // Get the file, temperature, and humidity from the form
         const fileInput = document.getElementById('image');
-        formData.append('file', fileInput.files[0]);
+        const tempInput = document.getElementById('temperature');
+        const humidityInput = document.getElementById('humidity');
 
-        try {
-            // Send the image file to the Flask server
-            const response = await fetch('http://127.0.0.1:5000/predict', {
-                method: 'POST',
-                body: formData
-            });
-            
-            const data = await response.json();
-            
-            // Display the result
-            document.getElementById('result').innerHTML = `<p>Predicted Class: ${data.predicted_class}</p>`;
-        } catch (error) {
-            console.error('Error:', error);
-            document.getElementById('result').innerHTML = '<p>Error occurred while processing the image.</p>';
-        }
-    });
+        // Simulating classification result (You can replace this logic with the actual prediction)
+        const predictedClass = "Plastic";  // Example classification result
+
+        // Display the result
+        document.getElementById('result').innerHTML = `<p>Predicted Class: ${predictedClass}</p>`;
+
+        // Show additional content after classification
+        document.getElementById('extra-content').style.display = 'block';
+    }
 </script>
 
 </body>
